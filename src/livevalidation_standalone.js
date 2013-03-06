@@ -1,6 +1,8 @@
 // LiveValidation 1.4 (standalone version)
 // Copyright (c) 2007-2010 Alec Hill (www.livevalidation.com)
 // LiveValidation is licensed under the terms of the MIT License
+//
+// Amendments by Georgi Kostov, PHG (performancehorizon.com), https://github.com/PerformanceHorizonGroup/livevalidation
 
 /*********************************************** LiveValidation class ***********************************/
 
