@@ -53,6 +53,19 @@ LiveValidation.CHECKBOX = 4;
 LiveValidation.SELECT   = 5;
 LiveValidation.FILE     = 6;
 
+/****** Default configuration options *******/
+
+LiveValidation.OPTIONS  = {
+	validMessage:'Thankyou!',
+	insertAfterWhatNode:null,
+	onlyOnBlur:false,
+	wait:0,
+	onlyOnSubmit:false,
+	
+	onValid:function(){ this.insertMessage(this.createMessageSpan()); this.addFieldClass(); },
+	onInvalid:function(){ this.insertMessage(this.createMessageSpan()); this.addFieldClass(); }
+};
+
 /****** Static methods *******/
 
 /**
@@ -96,21 +109,21 @@ LiveValidation.prototype = {
       this.form = this.element.form;
       // options
       var options = optionsObj || {};
-      this.validMessage = options.validMessage || 'Thankyou!';
-      var node = options.insertAfterWhatNode || this.element;
+      this.validMessage = options.validMessage || LiveValidation.OPTIONS.validMessage;
+      var node = options.insertAfterWhatNode || LiveValidation.OPTIONS.insertAfterWhatNode || this.element;
 	  this.insertAfterWhatNode = node.nodeType ? node : document.getElementById(node);
-      this.onlyOnBlur =  options.onlyOnBlur || false;
-      this.wait = options.wait || 0;
-      this.onlyOnSubmit = options.onlyOnSubmit || false;
+      this.onlyOnBlur =  options.onlyOnBlur || LiveValidation.OPTIONS.onlyOnBlur;
+      this.wait = options.wait || LiveValidation.OPTIONS.wait;
+      this.onlyOnSubmit = options.onlyOnSubmit || LiveValidation.OPTIONS.onlyOnSubmit;
 	  // hooks
-	  this.beforeValidation = options.beforeValidation || function(){};
-	  this.beforeValid = options.beforeValid || function(){};
-      this.onValid = options.onValid || function(){ this.insertMessage(this.createMessageSpan()); this.addFieldClass(); };
-	  this.afterValid = options.afterValid || function(){};
-	  this.beforeInvalid = options.beforeInvalid || function(){};
-      this.onInvalid = options.onInvalid || function(){ this.insertMessage(this.createMessageSpan()); this.addFieldClass(); };	
-	  this.afterInvalid = options.afterInvalid || function(){};	
-	  this.afterValidation = options.afterValidation || function(){};
+	  this.beforeValidation = options.beforeValidation || LiveValidation.OPTIONS.beforeValidation || function(){};
+	  this.beforeValid = options.beforeValid || LiveValidation.OPTIONS.beforeValid || function(){};
+      this.onValid = options.onValid || LiveValidation.OPTIONS.onValid;
+	  this.afterValid = options.afterValid || LiveValidation.OPTIONS.afterValid  || function(){};
+	  this.beforeInvalid = options.beforeInvalid || LiveValidation.OPTIONS.beforeInvalid  || function(){};
+      this.onInvalid = options.onInvalid || LiveValidation.OPTIONS.onInvalid;	
+	  this.afterInvalid = options.afterInvalid || LiveValidation.OPTIONS.afterInvalid || function(){};	
+	  this.afterValidation = options.afterValidation || LiveValidation.OPTIONS.afterValidation || function(){};
       // add to form if it has been provided
       if(this.form){
         this.formObj = LiveValidationForm.getInstance(this.form);
