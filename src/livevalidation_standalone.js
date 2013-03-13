@@ -2,7 +2,7 @@
 // Copyright (c) 2007-2010 Alec Hill (www.livevalidation.com)
 // LiveValidation is licensed under the terms of the MIT License
 //
-// Amendments by Georgi Kostov, PHG (performancehorizon.com), https://github.com/PerformanceHorizonGroup/livevalidation
+// Amendments by Georgi Kostov, PHG (http://performancehorizon.com), https://github.com/PerformanceHorizonGroup/livevalidation
 
 /*********************************************** LiveValidation class ***********************************/
 
@@ -58,7 +58,7 @@ LiveValidation.FILE     = 6;
 /****** Default configuration options *******/
 
 LiveValidation.OPTIONS  = {
-	validMessage:'Thankyou!',
+	validMessage:'Thank you!',
 	insertAfterWhatNode:null,
 	onlyOnBlur:false,
 	wait:0,
@@ -111,7 +111,7 @@ LiveValidation.prototype = {
       this.form = this.element.form;
       // options
       var options = optionsObj || {};
-      this.validMessage = options.validMessage || LiveValidation.OPTIONS.validMessage;
+      this.validMessage = options.validMessage || options.validMessage!==false && LiveValidation.OPTIONS.validMessage;
       var node = options.insertAfterWhatNode || LiveValidation.OPTIONS.insertAfterWhatNode || this.element;
 	  this.insertAfterWhatNode = node.nodeType ? node : document.getElementById(node);
       this.onlyOnBlur =  options.onlyOnBlur || LiveValidation.OPTIONS.onlyOnBlur;
