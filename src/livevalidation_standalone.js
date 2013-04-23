@@ -309,7 +309,14 @@ LiveValidation.prototype = {
 				break;
     	}
 		// select and checkbox elements values are handled differently
-		var value = (this.elementType == LiveValidation.SELECT) ? this.element.options[this.element.selectedIndex].value : this.element.value; 
+		var value = '';
+        if(this.elementType == LiveValidation.SELECT){
+          if(this.element.selectedIndex >= 0){
+            value = this.element.options[this.element.selectedIndex].value
+          }
+        }else{
+          value = this.element.value;
+        }
         if(validationFunction == Validate.Acceptance){
     	    if(this.elementType != LiveValidation.CHECKBOX) throw new Error('LiveValidation::validateElement - Element to validate acceptance must be a checkbox!');
     		value = this.element.checked;
