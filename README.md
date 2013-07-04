@@ -28,13 +28,6 @@ for each version, paste this into the head:
 <script type="text/javascript" src="javascripts/livevalidation_standalone.js"></script>
 ~~~
 
-## For prototype.js version:
-
-~~~html
-<script type="text/javascript" src="javascripts/prototype.js"></script>
-<script type="text/javascript" src="javascripts/livevalidation_prototype.js"></script>
-~~~
-
 Then you must wire up your validations to the form fields. For details of 
 how to do this, visit the examples page of the LiveValidation website 
 (http://www.livevalidation.com/examples), and the documentation page too 
