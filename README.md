@@ -1,14 +1,10 @@
----------------------------------------------------------------------------
-ABOUT
----------------------------------------------------------------------------
+# ABOUT
 
 LiveValidation is a small javascript library for performing validations, 
 and also to link these validations up to form fields, to give users 
 real-time feedback of the validity of their data.
 
----------------------------------------------------------------------------
-USAGE
----------------------------------------------------------------------------
+# USAGE
 
 To use the script you must first choose which flavour to use (prototype.js 
 or standalone versions).
@@ -26,14 +22,18 @@ Then you must include the javascript in the head of the web page document
 that you wish to perform validation in. Here is an example of how to do it 
 for each version, paste this into the head:
 
-For standalone version:
------------------------
-<script type="text/javascript" src="javascripts/livevalidation_standalone.js"></script>
+## For standalone version:
 
-For prototype.js version:
--------------------------
+~~~javascript
+<script type="text/javascript" src="javascripts/livevalidation_standalone.js"></script>
+~~~
+
+## For prototype.js version:
+
+~~~javascript
 <script type="text/javascript" src="javascripts/prototype.js"></script>
 <script type="text/javascript" src="javascripts/livevalidation_prototype.js"></script>
+~~~
 
 Then you must wire up your validations to the form fields. For details of 
 how to do this, visit the examples page of the LiveValidation website 
@@ -41,9 +41,7 @@ how to do this, visit the examples page of the LiveValidation website
 (http://www.livevalidation.com/documentation). The way you do this is the 
 same for both versions.
 
----------------------------------------------------------------------------
-DISTRIBUTION
----------------------------------------------------------------------------
+# DISTRIBUTION
 
 In addition to the source of LiveValidation, this distribution also 
 includes various test suites (using prototype.js and script.aculo.us) to 
@@ -55,9 +53,7 @@ To run these tests open test/run_unit_tests.html, and
 test/run_functional_tests.html in a browser, and select a version to test 
 from the menu on the left hand side.
 
----------------------------------------------------------------------------
-LICENSE
----------------------------------------------------------------------------
+# LICENSE
 
 LiveValidation is licensed under the terms of the MIT License (see the 
 included MIT-LICENSE for details).
