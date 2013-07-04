@@ -24,13 +24,13 @@ for each version, paste this into the head:
 
 ## For standalone version:
 
-~~~javascript
+~~~html
 <script type="text/javascript" src="javascripts/livevalidation_standalone.js"></script>
 ~~~
 
 ## For prototype.js version:
 
-~~~javascript
+~~~html
 <script type="text/javascript" src="javascripts/prototype.js"></script>
 <script type="text/javascript" src="javascripts/livevalidation_prototype.js"></script>
 ~~~
